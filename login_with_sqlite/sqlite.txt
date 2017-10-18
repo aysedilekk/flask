@@ -1,0 +1,7 @@
+static/user.db
+ 
+$ sqlite3
+$ User.db
+$ CREATE TABLE USERS(USERNAME TEXT PRIMARY KEY NOT NULL, PASSWORD TEXT NOT NULL);
+$ INSERT INTO USERS (USERNAME, PASSWORD)
+$ VALUES ('your_username', 'your_password')
