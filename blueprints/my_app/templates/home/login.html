@@ -1,0 +1,34 @@
+ <head>
+    <meta charset="utf-8">
+    <title>Deneme</title>
+</head>
+
+
+
+{% block body %}
+ 
+<div class="block1">
+<h1>Hello</h1>
+  <h2>Here is an interesting quote for you: </h2>
+  <p>
+{{quote}}
+  </p>
+<img src="http://www.naturalprogramming.com/images/smilingpython.gif">
+</div>
+
+
+
+  <h2>Login</h2>
+  <form action=" " method=post>
+	<dl>
+	  <dt>Username:
+	  <dd><input type=text name=username>
+	  <dt>Password:
+	  <dd><input type=password name=password>
+	  <dd><input type=submit value=Login>
+	</dl>
+  </form>
+
+
+{% endblock %} 
+
