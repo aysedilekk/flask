@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block content %}
+<script type=text/javascript>
+  $(function() {
+	$("#submitBtn").click(function() {
+		 $.ajax({
+			type: "GET",
+			url: $SCRIPT_ROOT + "/echo/",
+			contentType: "json; charset=utf-8",
+			data: { echoValue: $('input[name="echoText"]').val() },
+			success: function(data) {
+				$('#echoResult').text(data.value);
+			}
+		});     
+	});
+	
+	
+	$("#submitBtn2").click(function() {
+		 $.ajax({
+			type: "POST",
+			url: $SCRIPT_ROOT + "/echo/",
+			contentType: "json; charset=utf-8",
+			data: { echoValue: $('input[name="echoText"]').val() },
+			success: function(data) {
+				$('#echoResult').text(data.value);
+			}
+		});     
+	});    
+
+	
+	
+  });
+</script>
+<h3><a href = "{{ url_for('new') }}">Add New</a></h3><br>
+
+<strong>Enter a value to echo back:</strong>
+<input type='text' size='10' id='echoText' name='echoText'>
+<button type='button' id='submitBtn' name='submitBtn'>Submit via AJAX</button>
+<button type='button' id='submitBtn2' name='submitBtn2'>Post</button><br>
+
+<strong><div id='echoResult'></div></strong>
+{% endblock %} 
+
